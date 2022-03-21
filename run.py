@@ -118,7 +118,7 @@ def main(argv):
                         for i in range(len(polygroup[0])):
                             #Cytomine cartesian coordinate system, (0,0) is bottom left corner
                             #Mapping Stardist polygon detection coordinates to Cytomine ROI in whole slide image
-                            p = Point(minx+polygroup[1][i],miny-polygroup[0][i])
+                            p = Point(minx+(polygroup[1][i]*((roi_geometry.bounds[2]-minx)/im.size[0])),miny-(polygroup[0][i]*((miny-roi_geometry.bounds[1])/im.size[1])))
                             points.append(p)
 
                         annotation = Polygon(points)
