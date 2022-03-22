@@ -5,6 +5,7 @@ FROM cytomine/software-python3-base:v2.2.0
 RUN pip install tensorflow==2.2.0
 RUN pip install stardist==0.6.0
 RUN pip install numba==0.53
+RUN pip install numpy --upgrade
 RUN mkdir -p /models && \
     cd /models && \
     mkdir -p 2D_versatile_HE
