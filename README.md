@@ -1,3 +1,7 @@
+# S_CellDetect_Stardist_ROI_dev
+
+Slightly modified version of https://hub.docker.com/r/cytomine/s_celldetect_stardist_he_roi/ that attemps to fix issues with large ROIs: https://github.com/cytomine/S_CellDetect_Stardist_HE_ROI/issues/2
+
 # S_CellDetect_Stardist_ROI
 Cytomine (https://cytomine.org) app developed by ULiège Cytomine Research team (https://uliege.cytomine.org) for Cell/Nuclei detection in region of interests (ROIs), encapsulating Stardist Python code (https://github.com/mpicbg-csbd/stardist/) originally developed by Uwe Schmidt, Martin Weigert, Coleman Broaddus, and Gene Myers as published in Cell Detection with Star-convex Polygons. International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), Granada, Spain, September 2018.
 
