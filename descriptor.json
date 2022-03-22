@@ -1,7 +1,7 @@
 {
     "name": "CellDetect_Stardist_HE_ROI-dev",
     "container-image": {
-        "image": "anttikos/s_celldetect_stardist_he_roi-dev",
+        "image": "anttikos/s_celldetect_stardist_he_roi_dev",
         "type": "singularity"
     },
     "schema-version": "cytomine-0.1",
