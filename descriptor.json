@@ -137,6 +137,33 @@
 	    "set-by-server": false,
 	    "optional": true,
 	    "type": "Number"
-	}
+	},
+        {
+        	"id": "cytomine_host_2",
+      		"value-key": "@ID",
+      		"command-line-flag": "--@id",
+      		"name": "Alternative Cytomine host",
+      		"set-by-server": true,
+      		"optional": false,
+      		"type": "String"
+    	},
+        {
+			"id": "cytomine_public_key_2",
+			"value-key": "@ID",
+			"command-line-flag": "--@id",
+			"name": "Alternative Cytomine public key",
+			"set-by-server": true,
+			"optional": false,
+			"type": "String"
+    	},
+    	{
+    		"id": "cytomine_private_key_2",
+			"value-key": "@ID",
+			"command-line-flag": "--@id",
+			"name": "Alternative Cytomine private key",
+			"set-by-server": true,
+			"optional": false,
+			"type": "String"
+    	}	    
     ]
 }
