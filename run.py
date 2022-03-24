@@ -41,6 +41,8 @@ def main(argv):
     cytomine_host_2 = ""
     cytomine_public_key_2 = ""
     cytomine_private_key_2 = ""
+    cytomine_project_id_2 = ""
+    cytomine_software_id_2 = ""
 
     for i in range( len( argv ) ):
         if( argv[ i ] == '--alt_host' ):
@@ -49,6 +51,10 @@ def main(argv):
              cytomine_public_key_2 = argv[ i+1 ]
         if( argv[ i ] == '--alt_priv_key' ):
              cytomine_private_key_2 = argv[ i+1 ]
+        if( argv[ i ] == '--alt_id_project' ):
+             cytomine_project_id_2 = argv[ i+1 ]
+        if( argv[ i ] == '--alt_id_software' ):
+             cytomine_software_id_2 = argv[ i+1 ]
 
     for i in range( len( argv ) ):
         if( argv[ i ] == '--cytomine_host' ):
@@ -57,7 +63,11 @@ def main(argv):
              argv[ i+1 ] = cytomine_public_key_2
         if( argv[ i ] == '--cytomine_private_key' ):
              argv[ i+1 ] = cytomine_private_key_2
-
+        if( argv[ i ] == '--cytomine_id_project' ):
+             argv[ i+1 ] = cytomine_project_id_2
+        if( argv[ i ] == '--cytomine_id_software' ):
+             argv[ i+1 ] = cytomine_software_id_2                
+                
     print(argv)
     
     with CytomineJob.from_cli(argv) as conn:
