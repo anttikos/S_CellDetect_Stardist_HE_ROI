@@ -37,6 +37,29 @@ import logging
 __author__ = "Maree Raphael <raphael.maree@uliege.be>"
 
 def main(argv):
+    # Testing the idea of using alternative host for image data and running the algorithm
+    cytomine_host_2 = ""
+    cytomine_public_key_2 = ""
+    cytomine_private_key_2 = ""
+
+    for i in range( len( argv ) ):
+        if( argv[ i ] == '--cytomine_host_2' ):
+             cytomine_host_2 = argv[ i+1 ]
+        if( argv[ i ] == '--cytomine_public_key_2' ):
+             cytomine_public_key_2 = argv[ i+1 ]
+        if( argv[ i ] == '--cytomine_private_key_2' ):
+             cytomine_private_key_2 = argv[ i+1 ]
+
+    for i in range( len( argv ) ):
+        if( argv[ i ] == '--cytomine_host' ):
+             argv[ i+1 ] = cytomine_host_2
+        if( argv[ i ] == '--cytomine_public_key' ):
+             argv[ i+1 ] = cytomine_public_key_2
+        if( argv[ i ] == '--cytomine_private_key' ):
+             argv[ i+1 ] = cytomine_private_key_2
+
+    print(argv)
+    
     with CytomineJob.from_cli(argv) as conn:
         conn.job.update(status=Job.RUNNING, progress=0, statusComment="Initialization...")
         base_path = "{}".format(os.getenv("HOME")) # Mandatory for Singularity
