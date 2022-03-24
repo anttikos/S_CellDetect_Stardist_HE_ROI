@@ -6,7 +6,7 @@
     },
     "schema-version": "cytomine-0.1",
     "description": "Cell (nuclei) detection using StarDist with versatile H&E pre-trained model",
-    "command-line": "python run.py CYTOMINE_HOST CYTOMINE_PUBLIC_KEY CYTOMINE_PRIVATE_KEY CYTOMINE_HOST_2 CYTOMINE_PUBLIC_KEY_2 CYTOMINE_PRIVATE_KEY_2 CYTOMINE_ID_PROJECT CYTOMINE_ID_SOFTWARE CYTOMINE_ID_IMAGES CYTOMINE_ID_ROI_TERM CYTOMINE_ID_CELL_TERM STARDIST_PROB_T STARDIST_NMS_T STARDIST_NORM_PERC_LOW STARDIST_NORM_PERC_HIGH",
+    "command-line": "python run.py CYTOMINE_HOST CYTOMINE_PUBLIC_KEY CYTOMINE_PRIVATE_KEY CYTOMINE_ID_PROJECT CYTOMINE_ID_SOFTWARE CYTOMINE_ID_IMAGES CYTOMINE_ID_ROI_TERM CYTOMINE_ID_CELL_TERM STARDIST_PROB_T STARDIST_NMS_T STARDIST_NORM_PERC_LOW STARDIST_NORM_PERC_HIGH",
     "inputs": [
         {
         	"id": "cytomine_host",
@@ -34,34 +34,7 @@
 			"set-by-server": true,
 			"optional": false,
 			"type": "String"
-    	},
-        {
-        	"id": "cytomine_host_2",
-      		"value-key": "@ID",
-      		"command-line-flag": "--@id",
-      		"name": "Additional Cytomine host",
-      		"set-by-server": true,
-      		"optional": false,
-      		"type": "String"
-    	},
-        {
-			"id": "cytomine_public_key_2",
-			"value-key": "@ID",
-			"command-line-flag": "--@id",
-			"name": "Additional Cytomine public key",
-			"set-by-server": true,
-			"optional": false,
-			"type": "String"
-    	},
-    	{
-    		"id": "cytomine_private_key_2",
-			"value-key": "@ID",
-			"command-line-flag": "--@id",
-			"name": "Additional Cytomine private key",
-			"set-by-server": true,
-			"optional": false,
-			"type": "String"
-    	},	    
+    	}, 
 		{
 			"id": "cytomine_id_project",
 			"value-key": "@ID",
