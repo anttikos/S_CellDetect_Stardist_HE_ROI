@@ -6,7 +6,7 @@
     },
     "schema-version": "cytomine-0.1",
     "description": "Cell (nuclei) detection using StarDist with versatile H&E pre-trained model",
-    "command-line": "python run.py CYTOMINE_HOST CYTOMINE_PUBLIC_KEY CYTOMINE_PRIVATE_KEY CYTOMINE_ID_PROJECT CYTOMINE_ID_SOFTWARE CYTOMINE_ID_IMAGES CYTOMINE_ID_ROI_TERM CYTOMINE_ID_CELL_TERM STARDIST_PROB_T STARDIST_NMS_T STARDIST_NORM_PERC_LOW STARDIST_NORM_PERC_HIGH ALT_HOST ALT_PUB_KEY ALT_PRIV_KEY",
+    "command-line": "python run.py CYTOMINE_HOST CYTOMINE_PUBLIC_KEY CYTOMINE_PRIVATE_KEY CYTOMINE_ID_PROJECT CYTOMINE_ID_SOFTWARE CYTOMINE_ID_IMAGES CYTOMINE_ID_ROI_TERM CYTOMINE_ID_CELL_TERM STARDIST_PROB_T STARDIST_NMS_T STARDIST_NORM_PERC_LOW STARDIST_NORM_PERC_HIGH ALT_HOST ALT_PUB_KEY ALT_PRIV_KEY ALT_ID_SOFTWARE ALT_ID_PROJECT",
     "inputs": [
         {
         	"id": "cytomine_host",
@@ -170,6 +170,28 @@
 	    "set-by-server": false,
 	    "optional": true,
 			"type": "String"
-    	}	    
+    	},
+		{
+			"id": "alt_id_project",
+			"value-key": "@ID",
+			"command-line-flag": "--@id",
+			"name": "Alternative Cytomine project ID",
+			"description": "Alternative Cytomine project ID",
+	    	        "default-value": "",
+			"set-by-server": false,
+			"optional": true,
+			"type": "Number"
+    	},
+		{
+			"id": "alt_id_software",
+			"value-key": "@ID",
+			"command-line-flag": "--@id",
+			"name": "Alternative Cytomine software ID",
+			"description": "Alternative Cytomine software ID",
+	    	        "default-value": "",			
+			"set-by-server": false,
+			"optional": true,
+			"type": "Number"
+		},	    
     ]
 }
