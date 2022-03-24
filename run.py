@@ -43,11 +43,11 @@ def main(argv):
     cytomine_private_key_2 = ""
 
     for i in range( len( argv ) ):
-        if( argv[ i ] == '--cytomine_host_2' ):
+        if( argv[ i ] == '--alt_host' ):
              cytomine_host_2 = argv[ i+1 ]
-        if( argv[ i ] == '--cytomine_public_key_2' ):
+        if( argv[ i ] == '--alt_pub_key' ):
              cytomine_public_key_2 = argv[ i+1 ]
-        if( argv[ i ] == '--cytomine_private_key_2' ):
+        if( argv[ i ] == '--alt_priv_key' ):
              cytomine_private_key_2 = argv[ i+1 ]
 
     for i in range( len( argv ) ):
