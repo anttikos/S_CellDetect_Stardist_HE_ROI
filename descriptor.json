@@ -143,8 +143,10 @@
       		"value-key": "@ID",
       		"command-line-flag": "--@id",
       		"name": "Alternative Cytomine host",
-      		"set-by-server": true,
-      		"optional": false,
+	    "description": "Alternative Cytomine host",
+	    "default-value": "",
+	    "set-by-server": false,
+	    "optional": true,
       		"type": "String"
     	},
         {
@@ -152,8 +154,10 @@
 			"value-key": "@ID",
 			"command-line-flag": "--@id",
 			"name": "Alternative Cytomine public key",
-			"set-by-server": true,
-			"optional": false,
+	    "description": "Alternative Cytomine public key",
+	    "default-value": "",
+	    "set-by-server": false,
+	    "optional": true,
 			"type": "String"
     	},
     	{
@@ -161,8 +165,10 @@
 			"value-key": "@ID",
 			"command-line-flag": "--@id",
 			"name": "Alternative Cytomine private key",
-			"set-by-server": true,
-			"optional": false,
+	    "description": "Alternative Cytomine private key",
+	    "default-value": "",
+	    "set-by-server": false,
+	    "optional": true,
 			"type": "String"
     	}	    
     ]
