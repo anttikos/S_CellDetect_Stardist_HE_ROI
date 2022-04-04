@@ -143,9 +143,16 @@ def main(argv):
                                                               prob_thresh=conn.parameters.stardist_prob_t,
                                                               nms_thresh=conn.parameters.stardist_nms_t)
                     print("Number of detected polygons: %d" %len(details['coord']))
+                    annotation_count = 0
+                    # Max batch size (== the number of annotations to send at once)
+                    max_annotations = 50
+                    
                     cytomine_annotations = AnnotationCollection()
+                    
                     #Go over detections in this ROI, convert and upload to Cytomine
                     for pos,polygroup in enumerate(details['coord'],start=1):
+                        annotation_count = annotation_count + 1
+                            
                         #Converting to Shapely annotation
                         points = list()
                         for i in range(len(polygroup[0])):
@@ -161,9 +168,17 @@ def main(argv):
                                                                id_project=conn.parameters.cytomine_id_project,
                                                                id_terms=[conn.parameters.cytomine_id_cell_term]))
                         print(".",end = '',flush=True)
+                        
+                        # If batch is full annotations, send annotations and reset counter
+                        if annotation_count == max_annotations:
+                            annotation_count = 0
+                            #Send Annotation Collection (for this batch) to Cytomine server in one http request
+                            cytomine_annotations.save()
+                            cytomine_annotations = AnnotationCollection()
 
-                    #Send Annotation Collection (for this ROI) to Cytomine server in one http request
-                    ca = cytomine_annotations.save()
+                    # Send final batch
+                    if annotation_count > 0 and annotation_count < max_annotations:
+                        cytomine_annotations.save()
 
         conn.job.update(status=Job.TERMINATED, progress=100, statusComment="Finished.")
                 
